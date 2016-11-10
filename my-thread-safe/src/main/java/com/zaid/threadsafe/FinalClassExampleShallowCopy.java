@@ -1,7 +1,6 @@
 package com.zaid.threadsafe;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * FinalClassExampleShallowCopy
@@ -14,9 +13,9 @@ public final class FinalClassExampleShallowCopy {
 	private final HashMap<String, String> map;
 
 	public FinalClassExampleShallowCopy(int id, String name, HashMap<String, String> hashMap) {
-		this.id=id;
-		this.name=name;
-		this.map=hashMap;
+		this.id = id;
+		this.name = name;
+		this.map = hashMap;
 	}
 
 	public String getName() {
@@ -24,7 +23,7 @@ public final class FinalClassExampleShallowCopy {
 	}
 
 	public HashMap<String, String> getTestMap() {
-		return this.map; 
+		return this.map;
 	}
 
 	public int getId() {

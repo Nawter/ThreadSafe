@@ -11,8 +11,9 @@ import org.junit.Test;
 /**
  * Unit test for FinalClassExampleShallowCopyTest
  */
-public class FinalClassExampleShallowCopyTest {
+public class FinalClassExampleTest {
 	private FinalClassExampleShallowCopy finalClassExample;
+	private FinalClassDeepCopyExample finalClassDeepCopyExample;
 	private HashMap<String, String> hashMap;
 	private String name;
 	private int id;
@@ -25,7 +26,7 @@ public class FinalClassExampleShallowCopyTest {
 		name = "original";
 		id = 10;
 		finalClassExample = new FinalClassExampleShallowCopy(id, name, hashMap);
-
+		finalClassDeepCopyExample = new FinalClassDeepCopyExample(id, name, hashMap);
 	}
 
 	@Test
@@ -46,12 +47,25 @@ public class FinalClassExampleShallowCopyTest {
 		hashMap.put("3", "third");
 		assertEquals(hashMap.size(), finalClassExample.getTestMap().size());
 	}
-	
+
 	@Test
 	public void checkTheShallowCopyOfImmutableClassWithNewHashMapReturnMutable() {
 		HashMap<String, String> hmTest = finalClassExample.getTestMap();
 		hmTest.put("4", "new");
 		assertEquals(hmTest.size(), finalClassExample.getTestMap().size());
+	}
+
+	@Test
+	public void checkTheDeepCopyOfImmutableClassWithChangingHashMapReturnImmutable() {
+		hashMap.put("3", "third");
+		assertTrue(hashMap.size() != finalClassDeepCopyExample.getTestMap().size());
+	}
+
+	@Test
+	public void checkTheDeepCopyOfImmutableClassWithNewHashMapReturnImmutable() {
+		HashMap<String, String> hmTest = finalClassDeepCopyExample.getTestMap();
+		hmTest.put("4", "new");
+		assertTrue(hmTest.size() != finalClassDeepCopyExample.getTestMap().size());
 	}
 
 }
