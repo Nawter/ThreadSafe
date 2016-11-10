@@ -1,4 +1,7 @@
-.project
-.settings
+# Files
 .classpath
-.metadata
+.project
+
+# Directories
+target
+.settings
