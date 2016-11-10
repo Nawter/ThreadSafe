@@ -1,6 +1,7 @@
 package com.zaid.threadsafe;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.HashMap;
 
@@ -28,18 +29,15 @@ public class FinalClassExampleTest {
 	}
 
 	@Test
-	public void checkTheShallowCopyOfImmutableClass() {			
+	public void checkTheShallowCopyOfImmutableClassAndReturnImmutable() {			
 		assertEquals(id,finalClassExample.getId());
 		assertEquals(name,finalClassExample.getName());
 		assertEquals(hashMap.size(), finalClassExample.getTestMap().size());	
-		// put new variables into the immutable class and see if its change so its not immutable.
+		// put new variables into the immutable class and see if its no change it's immutable.
 		id=20;		
-		name="modified";
-		hashMap.put("3", "third");
-		finalClassExample=new FinalClassExampleShallowCopy(id,name,hashMap);
-		assertEquals(id,finalClassExample.getId());		
-		assertEquals(name,finalClassExample.getName());
-		assertEquals(hashMap.size(), finalClassExample.getTestMap().size());
+		name="modified";		
+		assertTrue(!name.equals(finalClassExample.getName()));
+		assertTrue(id != finalClassExample.getId());		
 	}
 
 }
