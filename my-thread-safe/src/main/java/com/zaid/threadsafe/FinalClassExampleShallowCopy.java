@@ -23,7 +23,7 @@ public final class FinalClassExampleShallowCopy {
 		return this.name;
 	}
 
-	public Map<String, String> getTestMap() {
+	public HashMap<String, String> getTestMap() {
 		return this.map; 
 	}
 
