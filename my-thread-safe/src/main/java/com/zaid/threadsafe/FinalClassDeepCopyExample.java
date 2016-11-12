@@ -2,8 +2,9 @@ package com.zaid.threadsafe;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
-public class FinalClassDeepCopyExample {
+public final class FinalClassDeepCopyExample {
 
 	private final int id;
 	private final String name;
@@ -12,7 +13,7 @@ public class FinalClassDeepCopyExample {
 	/*
 	 * Return a copy rather than returning the actual object reference.
 	 */
-	public FinalClassDeepCopyExample(int id, String name, HashMap<String, String> hashMap) {
+	public FinalClassDeepCopyExample(int id, String name, Map<String, String> hashMap) {
 		this.id = id;
 		this.name = name;
 		HashMap<String, String> tempMap = new HashMap<String, String>();
@@ -33,8 +34,8 @@ public class FinalClassDeepCopyExample {
 	 * Perform cloning of objects in the getter methods to return a copy rather
 	 * than returning the actual object reference.
 	 */
-	public HashMap<String, String> getTestMap() {
-		return (HashMap<String, String>) map.clone();
+	public Map<String, String> getTestMap() {
+		return (Map<String, String>) map.clone();
 	}
 
 	public int getId() {

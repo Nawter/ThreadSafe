@@ -2,6 +2,9 @@ package com.zaid.threadsafe;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.mutabilitydetector.unittesting.MutabilityAssert.assertInstancesOf;
+import static org.mutabilitydetector.unittesting.MutabilityMatchers.areImmutable;
+import static org.mutabilitydetector.unittesting.AllowedReason.assumingFields;
 
 import java.util.HashMap;
 
@@ -12,7 +15,7 @@ import org.junit.Test;
  * Unit test for FinalClassExampleShallowCopyTest
  */
 public class FinalClassExampleTest {
-	private FinalClassExampleShallowCopy finalClassExample;
+	private FinalClassShallowCopyExample finalClassExample;
 	private FinalClassDeepCopyExample finalClassDeepCopyExample;
 	private HashMap<String, String> hashMap;
 	private String name;
@@ -25,7 +28,7 @@ public class FinalClassExampleTest {
 		hashMap.put("2", "second");
 		name = "original";
 		id = 10;
-		finalClassExample = new FinalClassExampleShallowCopy(id, name, hashMap);
+		finalClassExample = new FinalClassShallowCopyExample(id, name, hashMap);
 		finalClassDeepCopyExample = new FinalClassDeepCopyExample(id, name, hashMap);
 	}
 
@@ -63,9 +66,21 @@ public class FinalClassExampleTest {
 
 	@Test
 	public void checkTheDeepCopyOfImmutableClassWithNewHashMapReturnImmutable() {
-		HashMap<String, String> hmTest = finalClassDeepCopyExample.getTestMap();
+		HashMap<String, String> hmTest = (HashMap<String, String>) finalClassDeepCopyExample.getTestMap();
 		hmTest.put("4", "new");
 		assertTrue(hmTest.size() != finalClassDeepCopyExample.getTestMap().size());
 	}
+	
+	
+	 @Test 
+	 public void checkFinalClassDeepCopyExampleImmutable() {
+	     // use FieldAssumptions to insist the usage is safe
+	  assertInstancesOf(FinalClassDeepCopyExample.class, 
+	                    areImmutable(),
+	                    assumingFields("map").areModifiedAsPartOfAnUnobservableCachingStrategy());
+	 }
+	 
+
+	
 
 }

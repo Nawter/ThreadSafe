@@ -6,13 +6,13 @@ import java.util.HashMap;
  * FinalClassExampleShallowCopy
  *
  */
-public final class FinalClassExampleShallowCopy {
+public final class FinalClassShallowCopyExample {
 
 	private final int id;
 	private final String name;
 	private final HashMap<String, String> map;
 
-	public FinalClassExampleShallowCopy(int id, String name, HashMap<String, String> hashMap) {
+	public FinalClassShallowCopyExample(int id, String name, HashMap<String, String> hashMap) {
 		this.id = id;
 		this.name = name;
 		this.map = hashMap;
