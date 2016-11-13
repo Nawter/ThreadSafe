@@ -8,7 +8,7 @@ import java.util.Arrays;
  * as long as it is not externally visible.
  */
 
-public class StringImmutable {
+public final class StringImmutable {
 	private final char value[];
 	private int hash;
 
