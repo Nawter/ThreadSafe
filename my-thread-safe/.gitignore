@@ -3,5 +3,5 @@
 .project
 
 # Directories
-target
+*/target/**
 .settings
