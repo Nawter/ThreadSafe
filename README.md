@@ -1,8 +1,9 @@
 # ThreadSafe
-Finished
-1.http://www.journaldev.com/129/how-to-create-immutable-class-in-java
-2.https://dzone.com/articles/do-immutability-really-means
-3.http://tutorials.jenkov.com/java-concurrency/java-memory-model.html
+Finished: 
+1. http://www.journaldev.com/129/how-to-create-immutable-class-in-java
+**
+2. https://dzone.com/articles/do-immutability-really-means
+3. http://tutorials.jenkov.com/java-concurrency/java-memory-model.html
 
 TODO
 1.http://tutorials.jenkov.com/java-concurrency/thread-safety-and-immutability.html
