@@ -20,12 +20,14 @@ public class ImmutableRGBTest {
 		testRed=11;
 		testGreen=111;
 		testName="name";
-		immutableRGB=new ImmutableRGB(testBlue,testRed,testGreen,testName);
+		immutableRGB=new ImmutableRGB(testRed,testGreen,testBlue,testName);
 	}
 	
 	@Test
 	public void checkIfImmutableRGBClassAndReturnImmutable() {
 		assertEquals((testRed << 16) | (testGreen << 8) | testBlue, immutableRGB.getRGB());
+		assertEquals(testName,immutableRGB.getName());
+		
 	}
 	
 	
