@@ -18,7 +18,7 @@ final public class ImmutableRGB {
             throw new IllegalArgumentException();
         }
     }
-
+    
     public ImmutableRGB(int red,
                         int green,
                         int blue,
