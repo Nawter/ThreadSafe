@@ -15,7 +15,6 @@ public class NutritionFactsTest {
 	private int servings;
 	private int sodium;
 	private int carbohydrate;
-	
 
 	@Before
 	public void setup() {
@@ -30,10 +29,10 @@ public class NutritionFactsTest {
 
 	@Test
 	public void checkNutritionFactsSatisfyBuilderPatter() {
-		assertEquals(servingSize,cocaCola.getServingSize());
-		assertEquals(calories,cocaCola.getCalories());
+		assertEquals(servingSize, cocaCola.getServingSize());
+		assertEquals(calories, cocaCola.getCalories());
 	}
-	
+
 	@Test
 	public void checkIfNurtitionFactsIsImmutableUsingMutabilityDetector() {
 		assertInstancesOf(NutritionFacts.class, areImmutable());
