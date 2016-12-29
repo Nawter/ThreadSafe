@@ -10,7 +10,8 @@ TODO:<br>
 1. Builder Pattern.<br>
 2. Effective Java-Immutable objects.<br>
 3. Java Concurrency In Pratice-Immutable objects.<br>
-4. Immutable collections(JDK Vs Guava).<br>
+4. http://stackoverflow.com/questions/2265503/why-do-i-need-to-override-the-equals-and-hashcode-methods-in-java.<br>
+5. http://stackoverflow.com/questions/1549553/should-we-always-override-equals.<br>
 
 
 
